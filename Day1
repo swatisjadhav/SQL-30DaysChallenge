@@ -14,3 +14,6 @@ SELECT DISTINCT author_id AS id
 FROM views 
 WHERE author_id = viewer_id 
 ORDER BY author_id ;
+
+
+Note: Please refer tables from the leetcode link which pasted at the beginning.Thank you!
