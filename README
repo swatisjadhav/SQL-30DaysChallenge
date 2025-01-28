@@ -1,2 +1,15 @@
 # SQL-30DaysChallenge
 Hello Everyone, This repository have all leetcode challenges to master sql.
+
+Writing Order of SQL [Syntax/Keywords]        Execution Order of SQL [Syntax/Keywords]
+-SELECT                                          -FROM
+-DISTINCT                                        -JOIN
+-FROM                                            -ON
+-JOIN                                            -WHERE
+-ON                                              -GROUP BY
+-WHERE                                           -HAVING
+-GROUP BY                                        -SELECT
+-HAVING                                          -DISTINCT
+-ORDER BY                                        -ORDER BY
+
+
