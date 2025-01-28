@@ -1,2 +1,2 @@
 # SQL-30DaysChallenge
-This repository will have all the practice sql queries from leetcode
+Hello Everyone, This repository have all leetcode challenges to master sql.
