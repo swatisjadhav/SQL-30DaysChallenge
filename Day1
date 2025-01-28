@@ -1,6 +1,13 @@
 --https://leetcode.com/problems/article-views-i/?envType=study-plan-v2&envId=top-sql-50
 --Write a solution to find all the authors that viewed at least one of their own articles.Return the result table sorted by id in ascending order.
 --How to use SELECT, DISTINCT, FROM, WHERE, ORDER BY
+
+--Problem Analysis: 
+*  We need to find all authors [author_id].
+*  viewed their own article  at least one [distinct/unique].
+*  This means here we are checking for ids where the viewer_id (viewer) is the same as the author_id (author).
+*  finally,Sort ids[author_id] in acending order.
+
 --Solution:
 
 SELECT DISTINCT author_id AS id 
