@@ -1,0 +1,19 @@
+--Leedcode  : https://leetcode.com/problems/invalid-tweets/description/?envType=study-plan-v2&envId=top-sql-50
+--Problem Statement:
+Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15.
+Return the result table in any order.
+
+--Problem Analysis:
+-	Find the ids [tweet_id]
+-	Criteria for invalid tweets – 
+- Tweets are invalid if length of the content is greater than 15 
+- Using length function we can find how many characters present in the content column
+- Finally result in any order[asc/desc] 	
+
+--Solution:
+SELECT tweet_id 
+FROM tweets 
+WHERE length(content)>15
+ORDER BY tweet_id;
+
+
