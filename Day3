@@ -1,0 +1,22 @@
+--Leedcode  : https://leetcode.com/problems/managers-with-at-least-5-direct-reports/?envType=study-plan-v2&envId=top-sql-50
+--Problem Statement:
+3.	Write a solution to find managers with at least five direct reports.
+Return the result table in any order.
+
+--Problem Analysis:
+-Here we have employee table with id,name,department,managerid.
+-Managerid is null that means that employee don’t have any manager.
+-Employee is not manager of themselves.
+-Its one table but we have to do comparision between two columns so will go for self join to compare id and managerid.
+-Further find count of managers and filter them with given condition.
+-Here we have to put condition on aggregated data so will go with having clause.
+-but before filtering that data we need to group that column using group by clause.
+
+--Solution:
+SELECT e1.name 
+FROM employee e1 JOIN employee e2 
+ON e1.id =e2.managerId
+GROUP BY e2.managerId
+HAVING count(e2.managerId)>=5;
+
+
