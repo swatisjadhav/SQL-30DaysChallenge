@@ -1,0 +1,19 @@
+--Leetcode:https://leetcode.com/problems/customers-who-bought-all-products/description/?envType=study-plan-v2&envId=top-sql-50
+--Problem Statement:
+4.  Write a solution to report the customer ids from the Customer table ,
+    that bought all the products in the Product table.
+
+--Problem Analysis:
+*  FIRST,we have to fetct customer_ids from customer table
+*  we have to find such customers who bought all the products for that
+  -  first find number of distinct products present in customer table using product_key[count,distinct]
+      -select count(distinct product_key) from Customer;
+  -  Find total number of products present in product table[Subquery ]
+      -select count(*) from Product;
+*To compare both the values we are using having clause after grouping them on customer_id[group by ,having]
+
+--Solution:
+SELECT customer_id
+FROM Customer
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key)=(SELECT COUNT(*) FROM Product)
