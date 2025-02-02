@@ -1,0 +1,21 @@
+--Leetcode: https://leetcode.com/problems/employees-whose-manager-left-the-company/?envType=study-plan-v2&envId=top-sql-50
+--Problem Sattement:
+
+6.  Find the IDs of the employees whose salary is strictly less than $30000 and whose manager left the company. 
+    When a manager leaves the company, their information is deleted from the Employees table, 
+    but the reports still have their manager_id set to the manager that left.
+    Return the result table ordered by employee_id.
+
+--Problem Analysis:
+-  First we have to fetch employee_ids in select and we have filter them using given conditions.
+  - we can use where clause to filter the records 
+  -  salary strictly less than $30000
+  -  whose manager left the company ,whose information deleted from employee table that means employee_id is not present in employee table.
+  -  to achive second condition we use subquery.
+
+--Solution:
+
+SELECT employee_id  FROM Employees
+WHERE salary < 30000 
+AND manager_id NOT IN (SELECT employee_id FROM Employees)
+ORDER BY employee_id;
