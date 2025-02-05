@@ -1,0 +1,9 @@
+--Lettcode: https://leetcode.com/problems/second-highest-salary/?envType=study-plan-v2&envId=top-sql-50
+
+--Problem Satement: 
+Write a solution to find the second highest distinct salary from the Employee table.
+
+--Solution:
+SELECT MAX(salary) AS SecondHighestSalary
+ FROM employee 
+WHERE salary < (SELECT MAX(salary) FROM Employee);
